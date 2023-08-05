@@ -1,0 +1,25 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+export default function CharacterCard({ characterObj }) {
+  return (
+    <Card style={{ width: '18rem', margin: '10px' }} className="team-card">
+      <Card.Img variant="top" src={characterObj.image_url} alt={characterObj.name} style={{ height: '8em' }} className="charac-img" />
+      <Card.Body>
+        <Card.Title>{characterObj.name}</Card.Title>
+        {/* need button link for context tracking for select */}
+        <Button className="card-select">SELECT</Button>
+      </Card.Body>
+    </Card>
+  );
+}
+
+CharacterCard.propTypes = {
+  characterObj: PropTypes.shape({
+    image_url: PropTypes.string,
+    name: PropTypes.string,
+    id: PropTypes.number,
+  }).isRequired,
+};
