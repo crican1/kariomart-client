@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -10,7 +11,9 @@ export default function CharacterCard({ characterObj }) {
       <Card.Body>
         <Card.Title>{characterObj.name}</Card.Title>
         {/* need button link for context tracking for select */}
-        <Button className="card-select">SELECT</Button>
+        <Link href="/vehicles" passHref>
+          <Button className="card-select">SELECT</Button>
+        </Link>
       </Card.Body>
     </Card>
   );
