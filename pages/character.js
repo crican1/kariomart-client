@@ -2,14 +2,12 @@
 import React, { useEffect, useState } from 'react';
 // import { Button } from 'react-bootstrap';
 import CharacterCard from '../components/CharacterCard';
+import { getCharacters } from '../utils/data/characterData';
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
 
-  // need to create get characters api call //
-
   const getAllCharacters = () => {
-    // eslint-disable-next-line no-undef
     getCharacters().then(setCharacters);
   };
 
