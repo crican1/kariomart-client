@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -14,7 +15,9 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>CHANGE ME</Navbar.Brand>
+          <Navbar.Brand>
+            <img src="/kariomartlogo.png" alt="kariomart icon" className="nav-logo" />
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
