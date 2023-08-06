@@ -16,8 +16,9 @@ export default function Characters() {
   }, []);
 
   return (
-    <div>
-      <div className="characters">
+    <div className="text-center my-4">
+      <h1>SELECT YOUR CHARACTER</h1>
+      <div className="d-flex flex-wrap">
         {characters.map((character) => (
           <CharacterCard key={character.id} characterObj={character} />
         ))}
