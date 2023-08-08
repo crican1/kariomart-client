@@ -35,6 +35,9 @@ export default function NavBar() {
             <Link passHref href="/map/maps">
               <Nav.Link>Maps</Nav.Link>
             </Link>
+            <Link passHref href="/cups">
+              <Nav.Link>Cups</Nav.Link>
+            </Link>
             <Link passHref href="/delete-me">
               <Nav.Link>Delete Me</Nav.Link>
             </Link>
