@@ -20,3 +20,7 @@ a {
 body {
   background-color: #5A5A5A;
 }
+
+.nav-logo {
+  height: 2rem;
+}
