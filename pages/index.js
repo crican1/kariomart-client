@@ -1,9 +1,20 @@
+import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
+import RaceCard from '../components/RaceCard';
+import { getRaces } from '../utils/data/raceData';
 
 function Home() {
   const { user } = useAuth();
+  const [races, setRaces] = useState([]);
+
+  useEffect(() => {
+    getRaces().then((data) => {
+      console.warn(data);
+      setRaces(data);
+    });
+  }, []);
+
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -15,9 +26,14 @@ function Home() {
       }}
     >
       <h1>Hello {user.fbUser.displayName}! </h1>
-      <p>Click the button below to logout!</p>
-      <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
-        Sign Out
+      <h2>Races:</h2>
+      <div>
+        {races.map((race) => (
+          <RaceCard key={race.id} raceObj={race} />
+        ))}
+      </div>
+      <Button href="/character">
+        Create New Race
       </Button>
     </div>
   );
