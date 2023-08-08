@@ -11,7 +11,7 @@ export default function DisplayMapCard({ maps }) {
       <h2>{maps.name}</h2>
       <h4>{maps.theme}</h4>
       <h4>{maps.difficulty}</h4>
-      <Link passHref href="/cups">
+      <Link passHref href="/selectCup">
         <Button variant="success" className="m-2">Select!</Button>
       </Link>
     </Card>
