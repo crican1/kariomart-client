@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import Link from 'next/link';
@@ -13,17 +14,17 @@ export default function DisplayMapCard({ mapObj }) {
       <h2>{mapObj.name}</h2>
       <h4>{mapObj.theme}</h4>
       <h4>{mapObj.difficulty}</h4>
-      {/* <Link passHref href="/cups"> */}
-      <Button
-        variant="success"
-        className="m-2"
-        onClick={() => {
-          setSelectedMap(mapObj.id);
-          addToRace({ map_id: mapObj.id });
-        }}
-      >Select!
-      </Button>
-      {/* </Link> */}
+      <Link passHref href="/selectCup">
+        <Button
+          variant="success"
+          className="m-2"
+          onClick={() => {
+            setSelectedMap(mapObj.id);
+            addToRace({ map_id: mapObj.id });
+          }}
+        >Select!
+        </Button>
+      </Link>
     </Card>
   );
 }
