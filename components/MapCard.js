@@ -14,7 +14,7 @@ export default function DisplayMapCard({ mapObj }) {
       <h2>{mapObj.name}</h2>
       <h4>{mapObj.theme}</h4>
       <h4>{mapObj.difficulty}</h4>
-      <Link passHref href="/selectCups">
+      <Link passHref href="/selectCup">
         <Button
           variant="success"
           className="m-2"
