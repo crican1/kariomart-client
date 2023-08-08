@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Link from 'next/link';
 import { RaceContext } from '../utils/context/raceContext';
 
 export default function CharacterCard({ characterObj }) {
