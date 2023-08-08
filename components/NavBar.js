@@ -23,6 +23,15 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>Home</Nav.Link>
             </Link>
+            <Link passHref href="/character">
+              <Nav.Link>Characters</Nav.Link>
+            </Link>
+            <Link passHref href="/vehicles">
+              <Nav.Link>Vehicles</Nav.Link>
+            </Link>
+            <Link passHref href="/map/maps">
+              <Nav.Link>Maps</Nav.Link>
+            </Link>
             <Link passHref href="/delete-me">
               <Nav.Link>Delete Me</Nav.Link>
             </Link>
