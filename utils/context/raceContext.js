@@ -5,9 +5,9 @@ import { useAuth } from './authContext';
 export const RaceContext = createContext();
 
 export const RaceContextProvider = ({ children }) => {
-  const user = useAuth();
-  console.warn('uid:', user.uid);
-  const { uid } = user;
+  const { user } = useAuth();
+  // console.warn('uid:', user.uid);
+  const uid = user;
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [selectedMap, setSelectedMap] = useState(null);
@@ -34,8 +34,8 @@ export const RaceContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.warn('Race Object:', selectedCharacter, selectedVehicle, selectedMap, user.uid);
-  }, [selectedCharacter, selectedVehicle, selectedMap, race, user.uid]);
+    console.warn('Race Object:', selectedCharacter, selectedVehicle, selectedMap, uid);
+  }, [selectedCharacter, selectedVehicle, selectedMap, race, uid]);
 
   return (
     <RaceContext.Provider
