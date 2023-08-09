@@ -25,11 +25,11 @@ function Cups() {
       <article className="cups">
         <h1>Cups</h1>
         <Form>
-          <InputGroup className="my-3">
+          <InputGroup className="my-3" style={{ width: '18rem', margin: '10px' }}>
             <Form.Control onChange={(e) => setSearch(e.target.value)} placeholder="Search Cups" />
           </InputGroup>
         </Form>
-        {cups.filter((cup) => (search.toLowerCase() === '' ? cup : cups.name.toLowerCase().includes(search))).map((cup) => (
+        {cups.filter((cup) => (search.toLowerCase() === '' ? cup : cup.name.toLowerCase().includes(search))).map((cup) => (
           <section key={`cup--${cup.id}`} className="cup">
             <CupCard
               id={cup.id}
