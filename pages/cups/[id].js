@@ -23,6 +23,7 @@ const ViewCup = () => {
       </Head>
       <Card className="text-center">
         <Card.Title> {cupDetails.name}</Card.Title>
+        <img src={cupDetails.image_url} alt={cupDetails.name} style={{ height: '8em' }} className="charac-img" />
       </Card>
     </>
   );

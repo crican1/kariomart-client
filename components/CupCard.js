@@ -8,13 +8,16 @@ import {
 const CupCard = ({
   id,
   name,
+  imageUrl,
 }) => {
   const router = useRouter();
+  console.warn(imageUrl);
 
   return (
     <>
-      <Card className="text-center">
+      <Card style={{ width: '18rem', margin: '10px' }} className="cup-card">
         <Card.Title> {name}</Card.Title>
+        <img src={imageUrl} alt={name} style={{ height: '8em' }} className="charac-img" />
         <Button
           variant="secondary"
           onClick={() => {
@@ -31,6 +34,7 @@ const CupCard = ({
 CupCard.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
 };
 
 export default CupCard;
