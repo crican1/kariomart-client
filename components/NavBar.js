@@ -38,9 +38,6 @@ export default function NavBar() {
             <Link passHref href="/cups">
               <Nav.Link>Cups</Nav.Link>
             </Link>
-            <Link passHref href="/delete-me">
-              <Nav.Link>Delete Me</Nav.Link>
-            </Link>
             <Button variant="danger" onClick={signOut}>
               Sign Out
             </Button>

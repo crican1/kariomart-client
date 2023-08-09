@@ -19,6 +19,7 @@ const CupCard = ({
         <Card.Title> {name}</Card.Title>
         <img src={imageUrl} alt={name} style={{ height: '8em' }} className="charac-img" />
         <Button
+          style={{ margin: '10px' }}
           variant="secondary"
           onClick={() => {
             router.push(`/cups/${id}`);

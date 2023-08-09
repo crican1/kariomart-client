@@ -36,7 +36,15 @@ function Home() {
       </Form>
       <div>
         {races.filter((race) => (search.toLowerCase() === '' ? race : race.map_id.name.toLowerCase().includes(search))).map((race) => (
-          <RaceCard key={race.id} raceObj={race} />
+          <section key={`race--${race.id}`} className="race">
+            <RaceCard
+              id={race.id}
+              characterId={race.character_id}
+              vehicleId={race.vehicle_id}
+              mapId={race.map_id}
+              onUpdate={Home}
+            />
+          </section>
         ))}
       </div>
       <Button href="/character" style={{ width: '18rem', margin: '10px' }}>
