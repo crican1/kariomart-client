@@ -8,9 +8,9 @@ import { deleteRace } from '../utils/data/raceData';
 
 const RaceCard = ({
   id,
-  map_id,
-  character_id,
-  vehicle_id,
+  mapId,
+  characterId,
+  vehicleId,
   onUpdate,
 }) => {
   const router = useRouter();
@@ -24,9 +24,9 @@ const RaceCard = ({
   return (
     <Card style={{ width: '18rem', margin: '10px' }} className="race-card">
       <Card.Body>
-        <Card.Title>{map_id?.name}</Card.Title>
-        <Card.Text>Character: {character_id?.name}</Card.Text>
-        <Card.Text>Vehicle: {vehicle_id?.name}</Card.Text>
+        <Card.Title>{mapId?.name}</Card.Title>
+        <Card.Text>Character: {characterId?.name}</Card.Text>
+        <Card.Text>Vehicle: {vehicleId?.name}</Card.Text>
       </Card.Body>
       <Button onClick={() => {
         router.push('/character');
@@ -40,13 +40,13 @@ const RaceCard = ({
 
 RaceCard.propTypes = {
   id: PropTypes.number.isRequired,
-  map_id: PropTypes.shape({
+  mapId: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
-  character_id: PropTypes.shape({
+  characterId: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
-  vehicle_id: PropTypes.shape({
+  vehicleId: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,

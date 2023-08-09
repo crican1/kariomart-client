@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Form, InputGroup } from 'react-bootstrap';
 import DisplayMapCard from '../../components/MapCard';
 import { getMaps } from '../../utils/data/mapData';
 import { createRace } from '../../utils/data/raceData';
@@ -7,6 +8,8 @@ import { RaceContext } from '../../utils/context/raceContext';
 export default function MapHome() {
   const { race } = useContext(RaceContext);
   const [maps, setMaps] = useState([]);
+  const [search, setSearch] = useState('');
+  console.warn(search);
 
   const getAllMaps = () => {
     getMaps().then(setMaps);
@@ -30,8 +33,13 @@ export default function MapHome() {
 
   return (
     <div>
+      <Form>
+        <InputGroup className="my-3" style={{ width: '18rem', margin: '10px' }}>
+          <Form.Control onChange={(e) => setSearch(e.target.value)} placeholder="Search Maps" />
+        </InputGroup>
+      </Form>
       <div className="characters">
-        {maps.map((track) => (
+        {maps.filter((track) => (search.toLowerCase() === '' ? track : track.name.toLowerCase().includes(search))).map((track) => (
           <DisplayMapCard key={track.id} mapObj={track} />
         ))}
       </div>
