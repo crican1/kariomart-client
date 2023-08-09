@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form, InputGroup } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import RaceCard from '../components/RaceCard';
 import { getRaces } from '../utils/data/raceData';
@@ -7,6 +7,8 @@ import { getRaces } from '../utils/data/raceData';
 function Home() {
   const { user } = useAuth();
   const [races, setRaces] = useState([]);
+  const [search, setSearch] = useState('');
+  console.warn(search);
 
   useEffect(() => {
     getRaces().then((data) => {
@@ -27,12 +29,17 @@ function Home() {
     >
       <h1>Hello {user.fbUser.displayName}! </h1>
       <h2>Races:</h2>
+      <Form>
+        <InputGroup className="my-3" style={{ width: '18rem', margin: '10px' }}>
+          <Form.Control onChange={(e) => setSearch(e.target.value)} placeholder="Search Races" />
+        </InputGroup>
+      </Form>
       <div>
-        {races.map((race) => (
+        {races.filter((race) => (search.toLowerCase() === '' ? race : race.map_id.name.toLowerCase().includes(search))).map((race) => (
           <RaceCard key={race.id} raceObj={race} />
         ))}
       </div>
-      <Button href="/character">
+      <Button href="/character" style={{ width: '18rem', margin: '10px' }}>
         Create New Race
       </Button>
     </div>
