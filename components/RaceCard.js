@@ -29,7 +29,7 @@ const RaceCard = ({
         <Card.Text>Vehicle: {vehicleId?.name}</Card.Text>
       </Card.Body>
       <Button onClick={() => {
-        router.push('/character');
+        router.push(`/races/${id}`);
       }}
       >Edit
       </Button>
