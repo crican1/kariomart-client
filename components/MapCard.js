@@ -17,7 +17,7 @@ export default function DisplayMapCard({ mapObj }) {
         className="m-2"
         onClick={() => {
           setSelectedMap(mapObj.id);
-          addToRace({ map_id: mapObj.id });
+          addToRace({ mapId: mapObj.id });
         }}
       >Select!
       </Button>

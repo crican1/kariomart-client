@@ -17,6 +17,11 @@ function Home() {
     });
   }, []);
 
+  const handleUpdate = () => {
+    getRaces().then((data) => {
+      setRaces(data);
+    });
+  };
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -42,7 +47,7 @@ function Home() {
               characterId={race.character_id}
               vehicleId={race.vehicle_id}
               mapId={race.map_id}
-              onUpdate={Home}
+              onUpdate={handleUpdate}
             />
           </section>
         ))}
