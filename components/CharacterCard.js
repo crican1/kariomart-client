@@ -19,7 +19,7 @@ export default function CharacterCard({ characterObj }) {
           // href="/vehicles"
             onClick={() => {
               setSelectedCharacter(characterObj.id);
-              addToRace({ character_id: characterObj.id });
+              addToRace({ characterId: characterObj.id });
             }}
           >SELECT
           </Button>

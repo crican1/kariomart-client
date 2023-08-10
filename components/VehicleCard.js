@@ -21,7 +21,7 @@ function VehicleCard({ vehicleObj }) {
             onClick={() => {
               setSelectedVehicle(vehicleObj.id);
               console.warn('Selected Vehicle:', vehicleObj);
-              addToRace({ vehicle_id: vehicleObj.id });
+              addToRace({ vehicleId: vehicleObj.id });
             }}
           >SELECT
           </Button>
