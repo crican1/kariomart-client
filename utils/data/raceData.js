@@ -42,13 +42,13 @@ const createRace = (raceData) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const updateRace = (raceId, raceData) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/races/${raceId}`, {
+const updateRace = (id, currentRace) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/races/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(raceData),
+    body: JSON.stringify(currentRace),
   })
     .then((response) => {
       if (!response.ok) {
