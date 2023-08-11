@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Form, InputGroup } from 'react-bootstrap';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import DisplayMapCard from '../../components/MapCard';
 import { getMaps } from '../../utils/data/mapData';
@@ -47,7 +48,9 @@ export default function MapHome() {
           <DisplayMapCard key={track.id} mapObj={track} />
         ))}
       </div>
-      <button type="button" onClick={handleCreateRace}>Create Race</button>
+      <Link passHref href="/">
+        <button type="button" onClick={handleCreateRace}>Create Race</button>
+      </Link>
     </div>
   );
 }

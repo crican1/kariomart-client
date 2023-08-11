@@ -12,15 +12,15 @@ export default function EditRace() {
 
   useEffect(() => {
     getSingleRace(id).then(setEditItem);
-    // console.warn('Race:', editItem);
+    // console.warn('Race afer getSingleRace:', editItem);
   }, [id]);
 
   return (
     <>
       <Head>
-        <title>Update {editItem.name} </title>
+        <title>Update Race </title>
       </Head>
-      <RaceForm obj={editItem} />
+      <RaceForm race={editItem} />
     </>
   );
 }
