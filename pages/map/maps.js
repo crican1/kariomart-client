@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Form, InputGroup } from 'react-bootstrap';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import DisplayMapCard from '../../components/MapCard';
 import { getMaps } from '../../utils/data/mapData';
 import { createRace } from '../../utils/data/raceData';
@@ -11,6 +12,8 @@ export default function MapHome() {
   const [maps, setMaps] = useState([]);
   const [search, setSearch] = useState('');
   console.warn(search);
+
+  const router = useRouter();
 
   const getAllMaps = () => {
     getMaps().then(setMaps);
@@ -25,6 +28,7 @@ export default function MapHome() {
       .then((response) => {
         // Race created successfully, handle the response if needed
         console.warn('Race created:', response);
+        router.push('/');
       })
       .catch((error) => {
         // Handle errors if the race creation fails
