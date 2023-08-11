@@ -1,7 +1,7 @@
 import { clientCredentials } from '../client';
 
-const getSingleRace = () => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/races`)
+const getSingleRace = (id) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/races/${id}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -54,7 +54,8 @@ const updateRace = (id, currentRace) => new Promise((resolve, reject) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.json();
+      // console.warn({ response });
+      return response;
     })
     .then(resolve)
     .catch(reject);

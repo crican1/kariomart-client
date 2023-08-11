@@ -15,6 +15,7 @@ const initialState = {
 
 const RaceForm = ({ race }) => {
   // const { user } = useAuth();
+  console.warn({ race });
   const [currentRace, setCurrentRace] = useState(initialState);
   // const router = useRouter();
   // const raceId = router.query;
@@ -72,6 +73,8 @@ const RaceForm = ({ race }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.warn({ id: currentRace.id });
+    console.warn({ currentRace });
     updateRace(currentRace.id, currentRace)
       .then(() => {
         // Do something after successful update
@@ -137,6 +140,7 @@ const RaceForm = ({ race }) => {
       {/* ... rest of your form fields ... */}
 
       <Button type="submit">Submit</Button>
+
     </Form>
   );
 };
